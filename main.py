@@ -10,7 +10,10 @@ def read_queries():
     n = int(input())
     return [Query(input().split()) for i in range(n)]
 
-
+def write_responses(result):
+    for r in result:
+        print(r) 
+        
 def process_queries(queries):
     result = []
     contacts = {}
@@ -24,11 +27,6 @@ def process_queries(queries):
             name = contacts.get(cur_query.number, "not found")
             result.append(name)
     return result
-
-
-def write_responses(result):
-    for r in result:
-        print(r)
 
 if __name__ == '__main__':
     queries = read_queries()
